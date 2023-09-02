@@ -1,0 +1,10 @@
+.title {
+  font-size: 48px;
+  text-align: center;
+  color: black;
+}
+
+.button {
+  background-color: blueviolet;
+  margin: auto;
+}
