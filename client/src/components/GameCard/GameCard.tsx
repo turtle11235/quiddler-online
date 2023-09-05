@@ -1,12 +1,12 @@
 import { Card } from "react-bootstrap";
 import './style.css'
 
-type cardProps = {
+export interface cardProps {
   letter: string,
   value?: number
 }
 
-function GameCard(props : cardProps) {
+const GameCard = (props : cardProps) => {
   return (
     <Card className="GameCard">
       <Card.Title>{props.letter.toUpperCase()}</Card.Title>
