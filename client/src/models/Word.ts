@@ -54,7 +54,7 @@ export default class Word {
   toString = () => {
     let s = ''
     for (let i in this.cards){
-      this.string += this.cards[i].letter;
+      s += this.cards[i].letter;
     }
     return s;
   }
