@@ -7,18 +7,15 @@ export interface WordProps {
 export default class Word {
   cards: Card[]
   value: number = 0
-  string: string = ''
   length: number = 0
 
   constructor(props: WordProps){
     this.cards = props.cards;
     this.value = 0
-    this.string = ''
     
     for (let i in this.cards){
       const card = this.cards[i];
       this.value += card.value;
-      this.string += card.letter;
       this.length += card.length
     }
   }
@@ -31,7 +28,7 @@ export default class Word {
       this.cards.splice(i, 0, card)
     }
     else {
-      throw new Error("invalid index for card. Value must be between 0 and cards.length")
+      throw new Error("Invalid index for card. Value must be between 0 and cards.length")
     }
 
     this.value += card.value;
@@ -39,6 +36,10 @@ export default class Word {
   }
 
   removeCard = (i: number) => {
+    if (i < 0 || i >= this.cards.length){
+      throw new Error("Invalid index for card. Value must be between 0 and cards.length")
+    }
+
     this.value -= this.cards[i].value;
     this.length -= this.cards[i].length;
 
